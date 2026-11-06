@@ -1,0 +1,35 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA: cualquier ruta desconocida carga la app
+[[redirects]]
+  from = "/*"
+  to = "/200.html"
+  status = 200
+
+# Seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    X-XSS-Protection = "0"
+    # El Content-Security-Policy se emite como <meta> desde SvelteKit (con hashes
+    # para los scripts inline). No se duplica aquí para no bloquear el bootstrap.
+
+# Cache agresivo para assets inmutables
+[[headers]]
+  for = "/_app/immutable/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

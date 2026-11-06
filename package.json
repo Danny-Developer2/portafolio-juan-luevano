@@ -1,0 +1,45 @@
+{
+  "name": "portafolio-juan-luevano",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portafolio profesional de Juan Daniel Luevano Ruiz — Desarrollador Full Stack & Ciberseguridad",
+  "scripts": {
+    "dev": "vite dev --port 5169 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 5169 --strictPort",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@lucide/svelte": "^1.69.0",
+    "gsap": "^3.15.1"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@playwright/test": "^1.65.0",
+    "@sveltejs/adapter-static": "^3.0.11",
+    "@sveltejs/kit": "^2.70.4",
+    "@sveltejs/vite-plugin-svelte": "^6.1.1",
+    "@tailwindcss/vite": "^4.3.4",
+    "@testing-library/svelte": "^5.4.2",
+    "@types/node": "^22.10.0",
+    "jsdom": "^31.0.0",
+    "netlify-cli": "^27.16.2",
+    "svelte": "^5.57.3",
+    "svelte-check": "^4.7.8",
+    "tailwindcss": "^4.3.4",
+    "typescript": "~5.9.3",
+    "vite": "^6.4.5",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}

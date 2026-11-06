@@ -1,0 +1,208 @@
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/jetbrains-mono/600.css';
+@import 'tailwindcss';
+
+@theme {
+  /* ── Superficies ─────────────────────────────────────────── */
+  --color-base: #05070a;
+  --color-raised: #0b0f14;
+  --color-overlay: #10161d;
+  --color-line: #1a222b;
+  --color-line-strong: #27323d;
+
+  /* ── Texto ───────────────────────────────────────────────── */
+  --color-fg: #e9eff4;
+  --color-fg-soft: #c7d1da;
+  --color-muted: #8b98a5;
+  --color-faint: #5d6b78;
+
+  /* ── Acentos ─────────────────────────────────────────────── */
+  --color-accent: #3ddc97;
+  --color-accent-strong: #22b878;
+  --color-accent-2: #58a6ff;
+  --color-warn: #f0b429;
+
+  /* ── Tipografías ─────────────────────────────────────────── */
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ── Radios ──────────────────────────────────────────────── */
+  --radius-card: 1.125rem;
+
+  /* ── Animaciones ─────────────────────────────────────────── */
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-glow: glow 7s ease-in-out infinite;
+  --animate-blink: blink 1.1s step-end infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @keyframes glow {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(58rem 38rem at 88% -12%, rgb(61 220 151 / 0.07), transparent 62%),
+      radial-gradient(46rem 32rem at -12% 22%, rgb(88 166 255 / 0.06), transparent 62%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgb(61 220 151 / 0.28);
+    color: #eafff5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2833;
+    border-radius: 999px;
+    border: 2px solid #05070a;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Evita que los hijos de un grid se desborden de su columna en pantallas pequeñas */
+  .grid > * {
+    min-width: 0;
+  }
+}
+
+@layer components {
+  /* Contenedor editorial */
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  /* Etiqueta mono numerada (01 — Sobre mí) */
+  .eyebrow {
+    @apply font-mono text-[11px] font-medium tracking-[0.24em] uppercase text-muted;
+  }
+  .eyebrow-accent {
+    @apply text-accent;
+  }
+
+  /* Tarjetas */
+  .card {
+    @apply rounded-2xl border border-line bg-raised/70 backdrop-blur-sm;
+  }
+
+  /* Botones */
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-50 bg-accent px-6 py-3 text-[#04241a] hover:-translate-y-0.5 hover:bg-accent-strong hover:shadow-[0_10px_30px_-10px_rgba(61,220,151,0.55)];
+  }
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-50 border border-line-strong bg-overlay/60 px-6 py-3 text-fg-soft hover:-translate-y-0.5 hover:border-accent/50 hover:text-fg;
+  }
+  .btn-sm {
+    @apply px-4 py-2 text-[13px];
+  }
+
+  /* Chips de tecnología */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-overlay/70 px-2.5 py-1 font-mono text-[11px] text-muted transition-colors hover:border-accent/40 hover:text-fg-soft;
+  }
+
+  /* Formularios */
+  .input {
+    @apply w-full rounded-xl border border-line bg-overlay/70 px-4 py-3 text-sm text-fg transition-colors placeholder:text-faint focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block font-mono text-[11px] tracking-[0.14em] text-muted uppercase;
+  }
+
+  /* Retículas y texturas propias */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+  .mask-fade-edges {
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+}
+
+/* Respeta prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

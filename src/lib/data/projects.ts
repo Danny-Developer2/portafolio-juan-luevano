@@ -1,0 +1,159 @@
+import type { Project } from './types';
+
+/**
+ * Proyectos seleccionados de https://github.com/Danny-Developer2
+ * Descripciones verificadas contra README, estructura de archivos y manifiestos.
+ * No se incluyen repositorios vacíos, duplicados ni con secretos expuestos.
+ */
+export const projects: Project[] = [
+  {
+    id: 'portafolio-angular',
+    nombre: 'Portafolio Angular SSR',
+    descripcion:
+      'Portafolio personal construido con Angular 18 y renderizado del lado del servidor (SSR) mediante Angular Universal y Express. Incluye panel de administración protegido por control de acceso basado en roles.',
+    problema:
+      'Necesitaba un portafolio con SEO real (SSR), panel de administración propio y una arquitectura de rutas escalable.',
+    features: [
+      'Renderizado SSR con Angular Universal + Express',
+      'Panel de administración con RoleGuard y rutas protegidas',
+      'Secciones: inicio, sobre mí, proyectos, ciberseguridad y contacto',
+      'Servicios desacoplados y enrutado lazy por sección'
+    ],
+    tech: ['Angular 18', 'TypeScript', 'Angular SSR', 'Express', 'Bootstrap 5'],
+    repo: 'https://github.com/Danny-Developer2/Portafolio-Angular',
+    accent: 'blue',
+    cover: { titulo: 'Portafolio SSR', subtitulo: 'Angular 18 + Express' },
+    categoria: 'Frontend',
+    ano: '2024'
+  },
+  {
+    id: 'portafolio3',
+    nombre: 'Landing Next.js + Tailwind',
+    descripcion:
+      'Landing personal con Next.js 14, Tailwind CSS y animaciones con Framer Motion: partículas, transiciones, sliders y contadores animados.',
+    problema:
+      'Crear una landing moderna, con animaciones ricas y alto rendimiento, lista para desplegar en Netlify.',
+    features: [
+      'Animaciones con Framer Motion y partículas (tsParticles)',
+      'Diseño con Tailwind CSS y tipografía optimizada (next/font)',
+      'Secciones: inicio, proyectos, servicios, sobre mí y contacto',
+      'Despliegue en Netlify con redirecciones SPA'
+    ],
+    tech: ['Next.js 14', 'React 18', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
+    repo: 'https://github.com/Danny-Developer2/Portafolio3',
+    accent: 'mint',
+    cover: { titulo: 'Landing Next.js', subtitulo: 'React 18 + Tailwind' },
+    categoria: 'Frontend',
+    ano: '2024'
+  },
+  {
+    id: 'backend-user-intermedio',
+    nombre: 'API de Usuarios — Arquitectura en Capas',
+    descripcion:
+      'API REST en ASP.NET Core con arquitectura en capas: controladores, servicios, repositorios, Unit of Work, DTOs y AutoMapper. Autenticación JWT, validación con FluentValidation, caché en memoria y Swagger.',
+    problema:
+      'Eliminar la duplicación de lógica y la falta de separación de responsabilidades en APIs de gestión de usuarios, tickets y productos.',
+    features: [
+      'Arquitectura en capas con Unit of Work y Repository Pattern',
+      'Autenticación JWT y control de roles',
+      'FluentValidation + AutoMapper + documentación Swagger',
+      'Cifrado de datos y gestión de sesiones con caché en memoria',
+      'Contenedor Docker para despliegue'
+    ],
+    tech: [
+      'ASP.NET Core',
+      'C#',
+      'Entity Framework Core',
+      'SQLite',
+      'JWT',
+      'AutoMapper',
+      'FluentValidation',
+      'Swagger',
+      'Docker'
+    ],
+    repo: 'https://github.com/Danny-Developer2/Backend-User-Intermedio',
+    accent: 'amber',
+    cover: { titulo: 'API en capas', subtitulo: 'ASP.NET Core + EF Core' },
+    categoria: 'Backend',
+    ano: '2025'
+  },
+  {
+    id: 'prueba-casoftt',
+    nombre: 'API de Catálogo — Vehículos y Marcas',
+    descripcion:
+      'API de catálogo (vehículos, marcas y fotos) en ASP.NET Core con paginación, ordenamiento, filtrado y carga de imágenes, consumida por un frontend en Angular.',
+    problema:
+      'Gestionar un catálogo con relaciones entre vehículos, marcas y fotos, y servir datos paginados y filtrados al frontend.',
+    features: [
+      'CRUD de vehículos, marcas y fotos con Entity Framework Core',
+      'Paginación, ordenamiento y filtrado con cabeceras de paginación',
+      'Repository Pattern + Unit of Work + AutoMapper',
+      'Documentación Swagger y cliente Angular'
+    ],
+    tech: ['ASP.NET Core', 'C#', 'Entity Framework Core', 'SQLite', 'AutoMapper', 'Swagger', 'Angular'],
+    repo: 'https://github.com/Danny-Developer2/Prueba_T_Casoftt',
+    accent: 'blue',
+    cover: { titulo: 'Catálogo API', subtitulo: 'ASP.NET Core + Angular' },
+    categoria: 'Backend',
+    ano: '2024'
+  },
+  {
+    id: 'backend-flask',
+    nombre: 'API Flask con Autenticación JWT',
+    descripcion:
+      'API y aplicación web en Flask con arquitectura MVC: modelos SQLAlchemy, migraciones con Alembic, autenticación JWT por cookies con protección CSRF y documentación Swagger.',
+    problema:
+      'Levantar una API con persistencia real, migraciones versionadas y autenticación segura en el ecosistema Python.',
+    features: [
+      'Arquitectura MVC con blueprints y servicios',
+      'SQLAlchemy + migraciones Alembic',
+      'JWT en cookies con protección CSRF',
+      'Swagger UI y plantillas HTML'
+    ],
+    tech: ['Python', 'Flask', 'SQLAlchemy', 'Alembic', 'JWT', 'Swagger', 'SQL Server'],
+    repo: 'https://github.com/Danny-Developer2/Backend-Flask',
+    accent: 'mint',
+    cover: { titulo: 'API Flask', subtitulo: 'Python + SQLAlchemy' },
+    categoria: 'Backend',
+    ano: '2025'
+  },
+  {
+    id: 'ldevs-react',
+    nombre: 'Plataforma Ldevs — React',
+    descripcion:
+      'Aplicación web en React con autenticación, panel administrativo, rutas privadas y formularios de contacto. Incluye sección de ciberseguridad y consumo de APIs con Axios.',
+    problema:
+      'Construir una plataforma con áreas pública y privada, autenticación, gestión de contenido y contacto.',
+    features: [
+      'Autenticación con rutas privadas y protección por rol',
+      'Dashboard administrativo y servicios por módulo',
+      'Formularios de contacto conectados a una API',
+      'Manejo centralizado de errores y notificaciones'
+    ],
+    tech: ['React 18', 'JavaScript', 'React Router 7', 'Axios', 'Bootstrap 5'],
+    repo: 'https://github.com/Danny-Developer2/Ldevs-React',
+    accent: 'amber',
+    cover: { titulo: 'Plataforma Ldevs', subtitulo: 'React 18 + Router' },
+    categoria: 'Frontend',
+    ano: '2024'
+  },
+  {
+    id: 'scripts',
+    nombre: 'Automatización con Python',
+    descripcion:
+      'Conjunto de scripts de automatización en Python: extracción estructurada de datos de documentos PDF con PyMuPDF y expresiones regulares, y un generador de proyectos .NET con estructura, dependencias y configuración predefinidas.',
+    problema:
+      'Eliminar tareas manuales repetitivas: leer datos de documentos PDF y crear la estructura base de proyectos .NET.',
+    features: [
+      'Extracción de datos de PDF con PyMuPDF y expresiones regulares',
+      'Generador de proyectos .NET (estructura, dependencias y configuración)',
+      'Automatización de procesos internos'
+    ],
+    tech: ['Python', 'PyMuPDF', 'Expresiones regulares', '.NET CLI'],
+    repo: 'https://github.com/Danny-Developer2/Scripts',
+    accent: 'blue',
+    cover: { titulo: 'Automatización', subtitulo: 'Python + PyMuPDF' },
+    categoria: 'Automatización',
+    ano: '2025'
+  }
+];

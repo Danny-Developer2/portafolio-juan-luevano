@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+
+# Salida de build
+build/
+.svelte-kit/
+dist/
+
+# Entorno (nunca subir valores reales)
+.env
+.env.*
+!.env.example
+
+# Datos personales (CV original): nunca publicar
+Datos_Humano/
+
+# Sistema / editor
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Tests
+coverage/
+playwright-report/
+test-results/
+.blob/
+
+# Local Netlify folder
+.netlify
