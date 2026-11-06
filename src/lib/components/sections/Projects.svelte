@@ -5,9 +5,15 @@
   import { projects } from '$lib/data/projects';
 
   // Rejilla uniforme: tres tarjetas por fila en escritorio (6 mitades) y dos en
-  // móvil. Se genera a partir del número real de proyectos para no desajustarse
-  // cuando se añade o quita uno.
-  const spans = projects.map(() => 'lg:col-span-2');
+  // móvil. Cuando la última fila no se llena, sus tarjetas se ensanchan para
+  // repartirse el ancho y no dejar un hueco a la derecha.
+  const n = projects.length;
+  const resto = n % 3;
+  const spans = projects.map((_, i) => {
+    if (resto === 2 && i >= n - 2) return 'sm:col-span-2 lg:col-span-3';
+    if (resto === 1 && i >= n - 4) return 'sm:col-span-2 lg:col-span-3';
+    return 'lg:col-span-2';
+  });
 </script>
 
 <section id="proyectos" class="relative border-y border-line bg-raised/30 py-24 sm:py-32">
