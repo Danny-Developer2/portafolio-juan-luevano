@@ -4,15 +4,10 @@
   import ProjectCard from './ProjectCard.svelte';
   import { projects } from '$lib/data/projects';
 
-  const spans = [
-    'sm:col-span-2 lg:col-span-3',
-    'lg:col-span-3',
-    'lg:col-span-2',
-    'lg:col-span-2',
-    'lg:col-span-2',
-    'lg:col-span-3',
-    'lg:col-span-3'
-  ];
+  // Rejilla uniforme: tres tarjetas por fila en escritorio (6 mitades) y dos en
+  // móvil. Se genera a partir del número real de proyectos para no desajustarse
+  // cuando se añade o quita uno.
+  const spans = projects.map(() => 'lg:col-span-2');
 </script>
 
 <section id="proyectos" class="relative border-y border-line bg-raised/30 py-24 sm:py-32">
@@ -21,7 +16,7 @@
       index="02"
       eyebrow="Proyectos"
       title="Trabajo seleccionado"
-      description="Siete proyectos reales de GitHub que muestran variedad técnica: frontend con SSR, APIs en capas, full stack y automatización. Cada tarjeta indica el problema que resuelve y las tecnologías usadas."
+      description="Once proyectos reales de GitHub: herramientas propias de ciberseguridad en Python, frontend con SSR, APIs en capas, full stack y automatización. Cada tarjeta indica el problema que resuelve y las tecnologías usadas."
     />
 
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">

@@ -26,8 +26,8 @@ export const profile: Profile = {
     { label: 'Email', url: 'mailto:daniel_luevanolr@hotmail.com', icon: 'mail' }
   ],
   stats: [
-    { valor: '28', etiqueta: 'repositorios públicos' },
-    { valor: '7', etiqueta: 'proyectos destacados' },
+    { valor: '33', etiqueta: 'repositorios públicos' },
+    { valor: '11', etiqueta: 'proyectos destacados' },
     { valor: '3', etiqueta: 'roles profesionales' },
     { valor: '2', etiqueta: 'disciplinas: desarrollo + seguridad' }
   ]

@@ -7,6 +7,86 @@ import type { Project } from './types';
  */
 export const projects: Project[] = [
   {
+    id: 'pyrecon',
+    nombre: 'PyRecon — Reconocimiento de Red',
+    descripcion:
+      'Herramienta de reconocimiento de infraestructura de red en Python puro: detección de hosts activos, escaneo de puertos TCP, identificación de servicios y versiones, resolución DNS y exportación a JSON, CSV y HTML.',
+    problema:
+      'Necesitaba una herramienta propia de reconocimiento que no dependiera de binarios externos y que respetara el alcance autorizado y los límites de concurrencia.',
+    features: [
+      'Detección de hosts activos y escaneo de puertos TCP con asyncio',
+      'Identificación de servicios y versiones mediante banner grabbing',
+      'Resolución DNS e identificación de servicios expuestos',
+      'Control de concurrencia, rate limit y exportación JSON/CSV/HTML'
+    ],
+    tech: ['Python', 'asyncio', 'socket', 'dnspython', 'Pydantic', 'Typer', 'Rich'],
+    repo: 'https://github.com/Danny-Developer2/PyRecon',
+    accent: 'mint',
+    cover: { titulo: 'PyRecon', subtitulo: 'Reconocimiento de red' },
+    categoria: 'Ciberseguridad',
+    ano: '2026'
+  },
+  {
+    id: 'pywebaudit',
+    nombre: 'PyWebAudit — Seguridad Web',
+    descripcion:
+      'Auditoría de seguridad de aplicaciones web: cabeceras HTTP, cookies, HTTPS/HSTS, CORS, métodos HTTP, listado de directorios, archivos sensibles y tecnologías expuestas.',
+    problema:
+      'Automatizar la revisión de configuraciones inseguras en aplicaciones web sin ejecutar cargas destructivas.',
+    features: [
+      'Análisis de cabeceras de seguridad, cookies y políticas CORS',
+      'Detección de ausencia de HTTPS, HSTS débil y redirecciones inseguras',
+      'Enumeración de métodos HTTP y listado de directorios',
+      'Cinco niveles de severidad con evidencia y recomendaciones'
+    ],
+    tech: ['Python', 'HTTPX', 'Pydantic', 'Typer', 'Rich', 'Jinja2'],
+    repo: 'https://github.com/Danny-Developer2/PyWebAudit',
+    accent: 'blue',
+    cover: { titulo: 'PyWebAudit', subtitulo: 'Seguridad de aplicaciones web' },
+    categoria: 'Ciberseguridad',
+    ano: '2026'
+  },
+  {
+    id: 'pytlsinspector',
+    nombre: 'PyTLSInspector — SSL/TLS',
+    descripcion:
+      'Auditoría de configuración criptográfica: inspección de certificados X.509, protocolos TLS admitidos, conjuntos de cifrado, cadenas de confianza y verificación de nombre de host.',
+    problema:
+      'Evaluar la postura criptográfica de los servidores de forma reproducible y sin depender de herramientas externas.',
+    features: [
+      'Inspección de certificados: caducidad, autofirmado, firma y longitud de clave',
+      'Detección de protocolos obsoletos (SSLv2/SSLv3/TLS 1.0/TLS 1.1)',
+      'Enumeración de cifrados con verificación del conjunto negociado',
+      'Análisis de cadenas de certificados y confianza'
+    ],
+    tech: ['Python', 'cryptography', 'ssl', 'Pydantic', 'Typer', 'Rich'],
+    repo: 'https://github.com/Danny-Developer2/PyTLSInspector',
+    accent: 'amber',
+    cover: { titulo: 'PyTLSInspector', subtitulo: 'Auditoría SSL/TLS' },
+    categoria: 'Ciberseguridad',
+    ano: '2026'
+  },
+  {
+    id: 'pydnsaudit',
+    nombre: 'PyDNSAudit — Seguridad DNS',
+    descripcion:
+      'Auditoría de infraestructura DNS: enumeración de registros, evaluación de SPF, DMARC y DKIM, detección de subdominios y análisis de exposición.',
+    problema:
+      'Detectar errores de configuración DNS y exposición de información sin recurrir a transferencia de zona ni técnicas invasivas.',
+    features: [
+      'Enumeración de registros A, AAAA, MX, NS, TXT, CNAME y SOA',
+      'Evaluación de SPF, DMARC y DKIM con recomendaciones',
+      'Enumeración de subdominios con lista reducida de nombres habituales',
+      'Detección de IP internas expuestas, entornos no productivos y DNS comodín'
+    ],
+    tech: ['Python', 'dnspython', 'Pydantic', 'Typer', 'Rich', 'Jinja2'],
+    repo: 'https://github.com/Danny-Developer2/PyDNSAudit',
+    accent: 'mint',
+    cover: { titulo: 'PyDNSAudit', subtitulo: 'Seguridad DNS' },
+    categoria: 'Ciberseguridad',
+    ano: '2026'
+  },
+  {
     id: 'portafolio-angular',
     nombre: 'Portafolio Angular SSR',
     descripcion:
